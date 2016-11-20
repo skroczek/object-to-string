@@ -60,7 +60,6 @@ class ObjectToString implements ToStringInterface
         if (!is_object($object)) {
             throw new \InvalidArgumentException(sprintf('$object must be an object, but got "%s".', gettype($object)));
         }
-        $cacheKey = get_class($object).'::'.$name;
 
         /** @var $metadata ClassMetadata */
         $metadata = $this->metadataFactory->getMetadataForClass(get_class($object));
@@ -87,8 +86,6 @@ class ObjectToString implements ToStringInterface
             $params[$key] = $this->accessor->getValue($object, $param);
         }
         $params['_this'] = $object;
-
-//        var_dump(serialize($this->expressionLanguage->parse($name['format'], $params)->getNodes()));
 
         return $this->expressionLanguage->evaluate($data['format'], $params);
     }
