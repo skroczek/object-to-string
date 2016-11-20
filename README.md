@@ -1,5 +1,8 @@
 Object To String
 ================
+
+[![Build Status](https://travis-ci.org/skroczek/object-to-string.svg?branch=master)](https://travis-ci.org/skroczek/object-to-string) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/916d8433-6888-4924-a468-4276abb2048d/mini.png)](https://insight.sensiolabs.com/projects/916d8433-6888-4924-a468-4276abb2048d) [![Coverage Status](https://coveralls.io/repos/github/skroczek/object-to-string/badge.svg?branch=master)](https://coveralls.io/github/skroczek/object-to-string?branch=master) 
+
 Just like the php __toString() method, but with the power of the [symfony expression language](http://symfony.com/doc/current/components/expression_language.html).
 
 Installation
