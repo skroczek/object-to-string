@@ -1,0 +1,23 @@
+stdClass:
+    name:
+        format: "name"
+        params:
+            name: "name"
+    email:
+        format: "email"
+        params:
+            email: "email"
+    email_alternative:
+        format: "email"
+        params:
+            email: "emailAlternative"
+    full_email:
+        format: "name ~ ' <' ~ email ~ '>'"
+        params:
+            name: "name"
+            email: "email"
+    full_email_alternative:
+        format: "name ~ ' <' ~ email ~ '>'"
+        params:
+            name: "name"
+            email: "emailAlternative"

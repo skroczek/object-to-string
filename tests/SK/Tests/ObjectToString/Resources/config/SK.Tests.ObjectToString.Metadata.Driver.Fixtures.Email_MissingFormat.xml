@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<object-to-string>
+    <class name="SK\Tests\ObjectToString\Metadata\Driver\Fixtures\Email">
+        <name name="name">
+            <param name="name">name</param>
+        </name>
+        <name name="email" format="email">
+            <param name="email">email</param>
+        </name>
+        <name name="email_alternative" format="email">
+            <param name="email">email_alternative</param>
+        </name>
+        <name name="full_email" format="name ~ ' &lt;' ~ email ~ '&gt;'">
+            <param name="email">email</param>
+            <param name="name">name</param>
+        </name>
+        <name name="full_email_alternative" format="name ~ ' &lt;' ~ email ~ '&gt;'">
+            <param name="email">emailAlternative</param>
+            <param name="name">name</param>
+        </name>
+    </class>
+</object-to-string>

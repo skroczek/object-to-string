@@ -1,0 +1,5 @@
+SK\Tests\ObjectToString\Metadata\Driver\Fixtures\Email:
+    name:
+        params:
+            name: "name"
+
