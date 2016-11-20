@@ -40,7 +40,11 @@ before_install:
 install: composer update --prefer-dist --no-interaction $COMPOSER_FLAGS
 
 script:
+  - mkdir -p build/logs
   - make $TARGET
+
+after_script:
+  - php vendor/bin/coveralls -v
 
 notifications:
   email: sk@xbug.de
