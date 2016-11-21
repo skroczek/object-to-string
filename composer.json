@@ -1,6 +1,6 @@
 {
   "name": "sk/object-to-string",
-  "description": "__to_string on steroids.",
+  "description": "__toString on steroids.",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
