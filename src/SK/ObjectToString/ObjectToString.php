@@ -90,10 +90,12 @@ class ObjectToString implements ToStringInterface
 
         $result = $this->expressionLanguage->evaluate($data['format'], $params);
 
-        if(!is_string($result)){
+        if (!is_string($result)) {
             // This should never happen. But we have to guarantee that a string is returned. So if you ever stumble
             // over this exception, please open an issue.
-            throw new \Exception(sprintf('Expected that expression language returns a string, but %s given.', gettype($result)));
+            throw new \Exception(
+                sprintf('Expected that expression language returns a string, but %s given.', gettype($result))
+            );
         }
 
         return $result;
