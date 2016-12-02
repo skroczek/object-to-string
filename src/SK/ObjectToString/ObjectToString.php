@@ -54,6 +54,7 @@ class ObjectToString implements ToStringInterface
      * @return string
      *
      * @throws \InvalidArgumentException
+     * @throws \Exception
      */
     public function generate($name, $object)
     {
@@ -87,6 +88,14 @@ class ObjectToString implements ToStringInterface
         }
         $params['_this'] = $object;
 
-        return $this->expressionLanguage->evaluate($data['format'], $params);
+        $result = $this->expressionLanguage->evaluate($data['format'], $params);
+
+        if(!is_string($result)){
+            // This should never happen. But we have to guarantee that a string is returned. So if you ever stumble
+            // over this exception, please open an issue.
+            throw new \Exception(sprintf('Expected that expression language returns a string, but %s given.', gettype($result)));
+        }
+
+        return $result;
     }
 }

@@ -41,6 +41,20 @@ class ObjectToStringTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * @expectedException \Exception
+     */
+    public function testWrongExpressionReturnType(){
+        $driver = new AnnotationDriver(new AnnotationReader());
+        $metadataFactory = new MetadataFactory($driver);
+        $expressionLanguage = $this->getMockBuilder('Symfony\Component\ExpressionLanguage\ExpressionLanguage')->getMock();
+        $expressionLanguage->method('evaluate')->willReturn([]);
+
+        $ots = new ObjectToString($metadataFactory, $expressionLanguage);
+        $email = new Email('John Doe', 'john.doe@example.com', 'jd@example.com');
+        $ots->generate('name', $email);
+    }
+
+    /**
      * @expectedException \InvalidArgumentException
      */
     public function testWithNonObject()
