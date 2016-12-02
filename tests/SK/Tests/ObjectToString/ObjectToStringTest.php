@@ -43,11 +43,12 @@ class ObjectToStringTest extends \PHPUnit_Framework_TestCase
     /**
      * @expectedException \Exception
      */
-    public function testWrongExpressionReturnType(){
+    public function testWrongExpressionReturnType()
+    {
         $driver = new AnnotationDriver(new AnnotationReader());
         $metadataFactory = new MetadataFactory($driver);
         $expressionLanguage = $this->getMockBuilder('Symfony\Component\ExpressionLanguage\ExpressionLanguage')->getMock();
-        $expressionLanguage->method('evaluate')->willReturn([]);
+        $expressionLanguage->method('evaluate')->willReturn(array());
 
         $ots = new ObjectToString($metadataFactory, $expressionLanguage);
         $email = new Email('John Doe', 'john.doe@example.com', 'jd@example.com');
